@@ -1,0 +1,15 @@
+# build artifacts
+public/
+dist/
+.hugo_build.lock
+
+# local env / secrets
+.env
+.env.*
+*.key
+*.pem
+
+# editor / OS
+.DS_Store
+.vscode/
+.idea/
