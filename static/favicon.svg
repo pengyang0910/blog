@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="45" fill="#FF9500"/>
+  <!-- 左耳 -->
+  <polygon points="25,20 15,5 35,25" fill="#FF9500"/>
+  <!-- 右耳 -->
+  <polygon points="75,20 85,5 65,25" fill="#FF9500"/>
+  <!-- 脸 -->
+  <circle cx="50" cy="50" r="35" fill="#FFB84D"/>
+  <!-- 左眼 -->
+  <circle cx="37" cy="45" r="5" fill="#000"/>
+  <!-- 右眼 -->
+  <circle cx="63" cy="45" r="5" fill="#000"/>
+  <!-- 鼻子 -->
+  <circle cx="50" cy="55" r="3" fill="#FF6B6B"/>
+  <!-- 嘴巴 -->
+  <path d="M 50 55 Q 45 62 40 60" stroke="#000" stroke-width="2" fill="none"/>
+  <path d="M 50 55 Q 55 62 60 60" stroke="#000" stroke-width="2" fill="none"/>
+  <!-- 胡须 -->
+  <line x1="20" y1="48" x2="32" y2="48" stroke="#000" stroke-width="1"/>
+  <line x1="20" y1="52" x2="32" y2="52" stroke="#000" stroke-width="1"/>
+  <line x1="68" y1="48" x2="80" y2="48" stroke="#000" stroke-width="1"/>
+  <line x1="68" y1="52" x2="80" y2="52" stroke="#000" stroke-width="1"/>
+</svg>

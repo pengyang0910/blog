@@ -1,0 +1,146 @@
+baseURL = "http://47.100.130.28/"
+languageCode = "zh-cn"
+title = "参商Parry"
+theme = "PaperMod"
+enableRobotsTXT = true
+enableEmoji = true
+
+# 分页配置
+[pagination]
+  pagerSize = 10
+
+# 启用搜索和标签功能所需的输出格式
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  # 外观设置
+  defaultTheme = "auto"  # auto, light, dark
+  disableThemeToggle = false
+  
+  # 主要内容分区（用于侧边栏最新文章）
+  mainSections = ["blog", "kb", "projects"]
+  
+  # 文章功能
+  ShowReadingTime = true
+  ShowWordCount = true
+  ShowCodeCopyButtons = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowRssButtonInSectionTermList = true
+  
+  # 目录设置
+  ShowToc = true
+  TocOpen = false
+  
+  # 首页设置
+  ShowAllPagesInArchive = true
+  ShowPageNums = true
+  
+  # 文章元信息
+  DateFormat = "2006-01-02"
+  ShowLastMod = true
+  
+  # 作者信息
+  author = "Parry"
+  description = "分享技术心得 | 记录学习历程 | 探索代码之美"
+  
+  # 网站关键词（SEO）
+  keywords = ["技术博客", "编程", "开发", "Hugo", "PaperMod"]
+  
+  # Favicon 配置
+  [params.assets]
+    favicon = "/favicon.svg"
+    favicon16x16 = "/favicon.ico"
+    favicon32x32 = "/favicon.ico"
+    apple_touch_icon = "/favicon.svg"
+    safari_pinned_tab = "/favicon.svg"
+
+  # 启用搜索功能
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+# 首页配置 - profile 模式
+[params.profileMode]
+  enabled = true
+  title = "参商Parry"
+  subtitle = "👋 海内存知己，天涯若比邻"
+  imageUrl = "/favicon.svg"  # 使用猫咪图标作为头像
+  imageWidth = 150
+  imageHeight = 150
+  imageTitle = "Parry的技术博客"
+  
+  [[params.profileMode.buttons]]
+    name = "📝 博客"
+    url = "/blog"
+  [[params.profileMode.buttons]]
+    name = "📚 知识库"
+    url = "/kb"
+  [[params.profileMode.buttons]]
+    name = "🚀 项目"
+    url = "/projects"
+  [[params.profileMode.buttons]]
+    name = "📋 归档"
+    url = "/archives"
+  [[params.profileMode.buttons]]
+    name = "👤 关于"
+    url = "/about"
+
+# 社交图标（暂未配置）
+# 如果以后需要添加社交链接，可以取消下面的注释并填入真实地址
+# [[params.socialIcons]]
+#   name = "github"
+#   url = "https://github.com/yourusername"
+# [[params.socialIcons]]
+#   name = "email"
+#   url = "mailto:your.email@example.com"
+
+# 编辑建议链接（点击文章底部的编辑按钮）
+[params.editPost]
+  URL = "https://github.com/yourusername/blog/tree/main/content"
+  Text = "建议修改"
+  appendFilePath = true
+
+# 统计和分析（可选）
+# [params.analytics.google]
+#   SiteVerificationTag = "XYZabc"
+# [params.analytics.umami]
+#   enable = true
+#   website_id = "xxxx"
+#   url = "https://analytics.example.com"
+
+# 启用搜索页面
+[[menu.main]]
+  name = "🔍 搜索"
+  url = "/search/"
+  weight = 5
+
+[menu]
+  [[menu.main]]
+    name = "📝 博客"
+    url = "/blog/"
+    weight = 10
+  [[menu.main]]
+    name = "📚 知识库"
+    url = "/kb/"
+    weight = 20
+  [[menu.main]]
+    name = "🚀 项目"
+    url = "/projects/"
+    weight = 30
+  [[menu.main]]
+    name = "🌱 花园"
+    url = "/garden/"
+    weight = 40
+  [[menu.main]]
+    name = "👤 关于"
+    url = "/about/"
+    weight = 50
+
