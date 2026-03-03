@@ -1,0 +1,8 @@
+/* 文章正文中的链接颜色 */
+.post-content a {
+    color: #1a73e8;
+}
+
+.post-content a:hover {
+    color: #1558b0;
+}

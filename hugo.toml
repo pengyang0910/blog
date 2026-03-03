@@ -1,4 +1,4 @@
-baseURL = "http://47.100.130.28/"
+baseURL = "https://pengyang.xyz/"
 languageCode = "zh-cn"
 title = "参商Parry"
 theme = "PaperMod"
@@ -19,7 +19,7 @@ enableEmoji = true
   disableThemeToggle = false
   
   # 主要内容分区（用于侧边栏最新文章）
-  mainSections = ["blog", "kb", "projects"]
+  mainSections = ["blog", "knowledge_base", "projects"]
   
   # 文章功能
   ShowReadingTime = true
@@ -82,7 +82,7 @@ enableEmoji = true
     url = "/blog"
   [[params.profileMode.buttons]]
     name = "📚 知识库"
-    url = "/kb"
+    url = "/knowledge_base"
   [[params.profileMode.buttons]]
     name = "🚀 项目"
     url = "/projects"
@@ -108,6 +108,44 @@ enableEmoji = true
   Text = "建议修改"
   appendFilePath = true
 
+# 评论系统配置
+# 推荐使用 Giscus（基于 GitHub Discussions）
+# 配置步骤：
+# 1. 访问 https://giscus.app 获取配置参数
+# 2. 将下面的参数替换为你的实际值
+# 3. 将 enable 设置为 true
+[params.giscus]
+  enable = false  # 配置完成后改为 true
+  repo = "yourusername/your-repo"
+  repoId = "R_your_repo_id"
+  category = "Comments"
+  categoryId = "DIC_your_category_id"
+  mapping = "pathname"
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "bottom"
+  theme = "preferred_color_scheme"
+  lang = "zh-CN"
+  loading = "lazy"
+
+# 其他评论系统（可选）
+# [params.utterances]
+#   enable = false
+#   repo = "yourusername/your-repo"
+#   issueTerm = "pathname"
+#   theme = "preferred-color-scheme"
+#   label = "💬 comment"
+
+# [params.waline]
+#   enable = false
+#   serverURL = "https://your-waline-server.com"
+#   lang = "zh-CN"
+#   dark = "auto"
+
+# [params.disqus]
+#   enable = false
+#   shortname = "your-disqus-shortname"
+
 # 统计和分析（可选）
 # [params.analytics.google]
 #   SiteVerificationTag = "XYZabc"
@@ -129,7 +167,7 @@ enableEmoji = true
     weight = 10
   [[menu.main]]
     name = "📚 知识库"
-    url = "/kb/"
+    url = "/knowledge_base/"
     weight = 20
   [[menu.main]]
     name = "🚀 项目"

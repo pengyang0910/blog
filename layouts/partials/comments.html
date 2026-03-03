@@ -1,0 +1,153 @@
+{{- /* 评论区配置 */ -}}
+{{- if .Params.comments -}}
+<div id="comments-section" class="comments-wrapper">
+    {{- if site.Params.giscus.enable -}}
+    <!-- Giscus 评论系统 -->
+    <div class="giscus-container">
+        <script src="https://giscus.app/client.js" data-repo="{{ site.Params.giscus.repo }}"
+            data-repo-id="{{ site.Params.giscus.repoId }}" data-category="{{ site.Params.giscus.category }}"
+            data-category-id="{{ site.Params.giscus.categoryId }}"
+            data-mapping="{{ site.Params.giscus.mapping | default " pathname" }}"
+            data-strict="{{ site.Params.giscus.strict | default " 0" }}"
+            data-reactions-enabled="{{ site.Params.giscus.reactionsEnabled | default " 1" }}"
+            data-emit-metadata="{{ site.Params.giscus.emitMetadata | default " 0" }}"
+            data-input-position="{{ site.Params.giscus.inputPosition | default " bottom" }}"
+            data-theme="{{ site.Params.giscus.theme | default " preferred_color_scheme" }}"
+            data-lang="{{ site.Params.giscus.lang | default " zh-CN" }}"
+            data-loading="{{ site.Params.giscus.loading | default " lazy" }}" crossorigin="anonymous" async>
+            </script>
+    </div>
+    {{- else if site.Params.utterances.enable -}}
+    <!-- Utterances 评论系统 -->
+    <div class="utterances-container">
+        <script src="https://utteranc.es/client.js" repo="{{ site.Params.utterances.repo }}"
+            issue-term="{{ site.Params.utterances.issueTerm | default " pathname" }}"
+            theme="{{ site.Params.utterances.theme | default " preferred-color-scheme" }}"
+            label="{{ site.Params.utterances.label }}" crossorigin="anonymous" async>
+            </script>
+    </div>
+    {{- else if site.Params.waline.enable -}}
+    <!-- Waline 评论系统 -->
+    <div id="waline" class="waline-container"></div>
+    <script type="module">
+        import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+        init({
+            el: '#waline',
+            serverURL: '{{ site.Params.waline.serverURL }}',
+            lang: '{{ site.Params.waline.lang | default "zh-CN" }}',
+            dark: '{{ site.Params.waline.dark | default "auto" }}',
+            emoji: '{{ site.Params.waline.emoji | default "https://unpkg.com/@waline/emojis@1.2.0/weibo" }}',
+        });
+    </script>
+    {{- else if site.Params.disqus.enable -}}
+    <!-- Disqus 评论系统 -->
+    <div id="disqus_thread" class="disqus-container"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = "{{ .Permalink }}";
+            this.page.identifier = "{{ .File.UniqueID }}";
+        };
+        (function () {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://{{ site.Params.disqus.shortname }}.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>请启用 JavaScript 来查看 <a href="https://disqus.com/?ref_noscript">Disqus 评论。</a></noscript>
+    {{- else -}}
+    <!-- 默认提示信息 -->
+    <div class="comments-placeholder">
+        <p>💬 评论功能尚未配置</p>
+        <p>请在 <code>hugo.toml</code> 中配置评论系统（支持 Giscus、Utterances、Waline、Disqus）</p>
+    </div>
+    {{- end -}}
+</div>
+
+<style>
+    .comments-wrapper {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+    }
+
+    .giscus-container,
+    .utterances-container,
+    .waline-container,
+    .disqus-container {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .comments-placeholder {
+        text-align: center;
+        padding: 2rem;
+        background: var(--code-bg);
+        border-radius: 8px;
+        color: var(--secondary);
+    }
+
+    .comments-placeholder p {
+        margin: 0.5rem 0;
+    }
+
+    .comments-placeholder code {
+        background: var(--theme);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        color: var(--primary);
+        font-size: 0.9rem;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .comments-wrapper {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+        }
+    }
+</style>
+
+{{- /* 主题切换时自动更新评论系统主题 */ -}}
+<script>
+    // 监听主题变化，自动更新评论系统主题
+    function updateCommentsTheme() {
+        const theme = document.body.className.includes('dark') ? 'dark' : 'light';
+
+        // Giscus 主题切换
+        const giscusFrame = document.querySelector('iframe.giscus-frame');
+        if (giscusFrame) {
+            const giscusTheme = theme === 'dark' ? 'dark' : 'light';
+            giscusFrame.contentWindow.postMessage(
+                { giscus: { setConfig: { theme: giscusTheme } } },
+                'https://giscus.app'
+            );
+        }
+
+        // Utterances 主题切换
+        const utterancesFrame = document.querySelector('.utterances-frame');
+        if (utterancesFrame) {
+            const utterancesTheme = theme === 'dark' ? 'github-dark' : 'github-light';
+            const message = {
+                type: 'set-theme',
+                theme: utterancesTheme
+            };
+            utterancesFrame.contentWindow.postMessage(message, 'https://utteranc.es');
+        }
+    }
+
+    // 页面加载完成后监听主题切换
+    document.addEventListener('DOMContentLoaded', function () {
+        // 监听主题切换按钮点击
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function () {
+                setTimeout(updateCommentsTheme, 100);
+            });
+        }
+
+        // 初始加载时设置主题
+        setTimeout(updateCommentsTheme, 1000);
+    });
+</script>
+{{- end -}}
