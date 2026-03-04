@@ -1,3 +1,24 @@
+/* ==================== 字体配置：霞鹜文楷 ==================== */
+/* 声明自定义字体 */
+@font-face {
+    font-family: 'LXGWBright';
+    src: url('/fonts/LXGWBright-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 全局应用字体 */
+body {
+    font-family: 'LXGWBright', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* 强制为代码块应用自定义字体（覆盖主题默认样式） */
+.post-content pre,
+.post-content code {
+    font-family: 'LXGWBright', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
+}
+
 /* 文章正文中的链接颜色 */
 .post-content a {
     color: #1a73e8;
@@ -5,4 +26,218 @@
 
 .post-content a:hover {
     color: #1558b0;
+}
+
+/* ==================== 首页个人资料区域样式 ==================== */
+.home-profile {
+    margin: 40px 0 50px;
+    padding: 0 var(--gap);
+}
+
+.home-profile-inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    max-width: 800px;
+}
+
+.home-profile-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.home-profile-content h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: var(--primary);
+}
+
+.home-profile-subtitle {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+}
+
+.home-profile-social {
+    display: flex;
+    gap: 16px;
+}
+
+.home-profile-social a {
+    color: var(--secondary);
+    transition: color 0.2s ease;
+}
+
+.home-profile-social a:hover {
+    color: var(--primary);
+}
+
+.home-profile-social svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* ==================== 首页文章列表样式 ==================== */
+/* 文章卡片横向布局 - 仿截图样式 */
+.post-entry {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 24px;
+    background: var(--entry);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.post-entry:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.post-entry .entry-cover {
+    flex-shrink: 0;
+    width: 220px;
+    margin: 0;
+    order: 2;
+}
+
+.post-entry .entry-cover img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.post-entry .entry-content-wrapper {
+    flex: 1;
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post-entry .entry-header h2 {
+    font-size: 1.35rem;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.post-entry .entry-header h2 a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.post-entry .entry-content {
+    margin: 0 0 12px 0;
+    color: var(--secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-entry .entry-footer {
+    font-size: 0.8rem;
+    color: var(--secondary);
+    opacity: 0.8;
+}
+
+/* 第一篇文章特殊样式 - 与其他文章保持一致 */
+.first-entry {
+    background: var(--entry);
+}
+
+.first-entry .entry-header h2 {
+    font-size: 1.35rem;
+}
+
+/* 查看更多按钮 */
+.home-view-more {
+    display: flex;
+    justify-content: flex-end;
+    margin: 30px 0 50px;
+    padding: 0 var(--gap);
+}
+
+.home-view-more .button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--primary);
+    color: var(--theme);
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.home-view-more .button:hover {
+    opacity: 0.85;
+}
+
+/* ==================== 响应式适配 ==================== */
+@media screen and (max-width: 768px) {
+    .home-profile-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .home-profile-avatar img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .home-profile-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .home-profile-subtitle {
+        font-size: 1rem;
+    }
+
+    .home-profile-social {
+        justify-content: center;
+    }
+
+    /* 移动端文章卡片垂直布局 */
+    .post-entry {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .post-entry .entry-cover {
+        width: 100%;
+        order: 1;
+    }
+
+    .post-entry .entry-cover img {
+        height: 180px;
+    }
+
+    .post-entry .entry-content-wrapper {
+        order: 2;
+    }
+
+    .post-entry .entry-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .home-view-more {
+        justify-content: center;
+    }
 }
