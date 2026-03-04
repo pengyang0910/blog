@@ -1,5 +1,5 @@
 ---
-title: "Knowledge Base"
+title: "知识库"
 date: 2026-02-08
 draft: false
 ---

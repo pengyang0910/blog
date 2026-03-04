@@ -1,3 +1,23 @@
+/* ==================== 搜索页标签區域样式 ====================*/
+.search-tags-section {
+    margin-top: 40px;
+}
+
+.search-tags-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--primary);
+    border-bottom: none;
+}
+
+.search-tags-list {
+    margin-top: 0;
+}
+
 /* ==================== 字体配置：霞鹜文楷 ==================== */
 /* 声明自定义字体 */
 @font-face {

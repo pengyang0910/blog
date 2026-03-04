@@ -12,6 +12,7 @@ enableEmoji = true
 # 分类法配置 - 添加 series 系列文章分类
 taxonomies = [
   {name = "tags", paginate = 10},
+  {name = "categories", paginate = 10},
   {name = "series", paginate = 10}
 ]
 
