@@ -1,0 +1,185 @@
+/* ==================== Heti 中文排版优化 ==================== */
+
+/* Heti 基础样式应用 */
+.heti {
+    /* 中文标点挤压 */
+    --heti-spacing-dot: 0.25em;
+    --heti-spacing-colon: 0.25em;
+    --heti-spacing-semicolon: 0.25em;
+    --heti-spacing-exclamation: 0.25em;
+    --heti-spacing-question: 0.25em;
+
+    /* 行高优化 */
+    --heti-line-height: 1.8;
+    --heti-line-height-heading: 1.4;
+}
+
+/* 为文章正文应用 Heti 样式 */
+.post-content.heti,
+.post-content {
+    /* 中文排版优化 */
+    text-align: justify;
+    word-wrap: break-word;
+    line-height: 1.8;
+}
+
+/* 中英文混排优化 */
+.post-content p,
+.post-content li,
+.post-content td,
+.post-content th {
+    /* 自动添加中英文间距 */
+    font-feature-settings: "kern" 1;
+    text-align: justify;
+}
+
+/* 标点符号优化 */
+.post-content p {
+    /* 首行缩进 */
+    text-indent: 2em;
+}
+
+.post-content p:first-of-type,
+.post-content h1+p,
+.post-content h2+p,
+.post-content h3+p,
+.post-content h4+p,
+.post-content blockquote+p,
+.post-content ul+p,
+.post-content ol+p,
+.post-content pre+p,
+.post-content figure+p,
+.post-content .highlight+p {
+    text-indent: 0;
+}
+
+/* 标题样式优化 */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    line-height: 1.4;
+    margin-top: 2em;
+    margin-bottom: 0.8em;
+}
+
+.post-content h1 {
+    font-size: 1.8em;
+    margin-top: 0;
+}
+
+.post-content h2 {
+    font-size: 1.5em;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.3em;
+}
+
+.post-content h3 {
+    font-size: 1.25em;
+}
+
+/* 引用块样式 */
+.post-content blockquote {
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    border-left: 4px solid var(--tertiary);
+    background: var(--code-bg);
+    border-radius: 0 8px 8px 0;
+}
+
+.post-content blockquote p {
+    text-indent: 0;
+    margin: 0;
+}
+
+.post-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* 列表样式优化 */
+.post-content ul,
+.post-content ol {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+.post-content li {
+    margin: 0.5em 0;
+}
+
+/* 代码块样式 */
+.post-content pre {
+    margin: 1.5em 0;
+    border-radius: 8px;
+}
+
+.post-content code {
+    font-family: 'LXGWBright', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+}
+
+/* 表格样式 */
+.post-content table {
+    margin: 1.5em 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.post-content th,
+.post-content td {
+    padding: 0.75em 1em;
+    border: 1px solid var(--border);
+}
+
+.post-content th {
+    background: var(--code-bg);
+    font-weight: 600;
+}
+
+/* 图片样式 */
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5em 0;
+}
+
+.post-content figure {
+    margin: 1.5em 0;
+}
+
+.post-content figcaption {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 0.9em;
+    margin-top: 0.5em;
+}
+
+/* 链接样式 */
+.post-content a {
+    color: #1a73e8;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.post-content a:hover {
+    border-bottom-color: #1a73e8;
+}
+
+/* 分隔线样式 */
+.post-content hr {
+    margin: 2em 0;
+    border: none;
+    border-top: 1px solid var(--border);
+}
+
+/* 暗色模式适配 */
+[data-theme="dark"] .post-content a {
+    color: #58a6ff;
+}
+
+[data-theme="dark"] .post-content a:hover {
+    border-bottom-color: #58a6ff;
+}

@@ -1,0 +1,96 @@
+/* ==================== 网站统计样式 (Busuanzi) ==================== */
+
+/* 页脚统计信息 */
+.footer-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    color: var(--secondary);
+    font-size: 0.85em;
+}
+
+.footer-stats span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.footer-stats .stats-icon {
+    width: 14px;
+    height: 14px;
+    opacity: 0.7;
+}
+
+.footer-stats .stats-number {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* 文章页阅读次数 */
+.post-meta .reading-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    color: var(--secondary);
+    font-size: 0.9em;
+}
+
+.post-meta .reading-count svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* 统计数字加载动画 */
+@keyframes statsFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-2px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.busuanzi-value {
+    animation: statsFadeIn 0.3s ease;
+}
+
+/* 页脚布局优化 */
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    line-height: 1.6;
+}
+
+.footer>span {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* 分隔符样式 */
+.footer .divider {
+    color: var(--secondary);
+    opacity: 0.5;
+}
+
+/* 响应式适配 */
+@media screen and (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        gap: 0.3em;
+    }
+
+    .footer .divider {
+        display: none;
+    }
+
+    .footer-stats {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

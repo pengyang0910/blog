@@ -1,2 +1,23 @@
 {{- /* Footer custom content area start */ -}}
+
+<!-- Busuanzi 网站统计 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Heti 中文排版初始化 -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // 初始化 Heti 排版优化
+        if (typeof Heti !== 'undefined') {
+            const heti = new Heti('.post-content');
+            heti.autoSpacing();
+        }
+
+        // 为文章正文添加 heti 类
+        const postContent = document.querySelector('.post-content');
+        if (postContent && !postContent.classList.contains('heti')) {
+            postContent.classList.add('heti');
+        }
+    });
+</script>
+
 {{- /* Footer custom content area end */ -}}

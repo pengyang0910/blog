@@ -1,0 +1,26 @@
+{{- /* Head custom content area start */ -}}
+
+<!-- Heti 中文排版优化 -->
+<link rel="stylesheet" href="https://unpkg.com/heti@0.9.4/umd/heti.min.css">
+<script src="https://unpkg.com/heti@0.9.4/umd/heti-addon.min.js"></script>
+
+<!-- 自定义模块化 CSS -->
+{{ $customCSS := resources.Get "css/extended/custom.css" }}
+{{ $tocCSS := resources.Get "css/extended/toc.css" }}
+{{ $hetiCSS := resources.Get "css/extended/heti.css" }}
+{{ $statsCSS := resources.Get "css/extended/stats.css" }}
+
+{{ if $customCSS }}
+<link rel="stylesheet" href="{{ $customCSS.RelPermalink }}">
+{{ end }}
+{{ if $tocCSS }}
+<link rel="stylesheet" href="{{ $tocCSS.RelPermalink }}">
+{{ end }}
+{{ if $hetiCSS }}
+<link rel="stylesheet" href="{{ $hetiCSS.RelPermalink }}">
+{{ end }}
+{{ if $statsCSS }}
+<link rel="stylesheet" href="{{ $statsCSS.RelPermalink }}">
+{{ end }}
+
+{{- /* Head custom content area end */ -}}

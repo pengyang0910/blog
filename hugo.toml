@@ -9,6 +9,12 @@ enableEmoji = true
 [pagination]
   pagerSize = 10
 
+# 分类法配置 - 添加 series 系列文章分类
+taxonomies = [
+  {name = "tags", paginate = 10},
+  {name = "series", paginate = 10}
+]
+
 # 启用搜索和标签功能所需的输出格式
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -45,6 +51,10 @@ enableEmoji = true
   # 作者信息
   author = "Parry"
   description = "分享技术心得 | 记录学习历程 | 探索代码之美"
+  
+  # 页脚版权年份
+  StartYear = 2026
+  EndYear = 2026
   
   # 网站关键词（SEO）
   keywords = ["技术博客", "编程", "开发", "Hugo", "PaperMod"]

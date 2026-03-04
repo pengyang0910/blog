@@ -1,0 +1,194 @@
+/* ==================== 目录样式 (Table of Contents) ==================== */
+
+:root {
+    --toc-width: 240px;
+    --recent-width: 260px;
+    --gap: 2rem;
+}
+
+/* 左侧目录 */
+.toc-sidebar {
+    position: absolute;
+    left: calc((var(--toc-width) + var(--gap)) * -1);
+    width: var(--toc-width);
+    top: 0;
+}
+
+.toc-sticky {
+    position: sticky;
+    top: 80px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding: 1rem 0;
+}
+
+.toc-header {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.toc-sidebar .toc {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.toc-sidebar .toc details {
+    border: none;
+}
+
+.toc-sidebar .toc summary {
+    display: none;
+}
+
+.toc-sidebar .toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.toc-sidebar .toc ul ul {
+    padding-left: 1rem;
+    margin-top: 0.3rem;
+}
+
+.toc-sidebar .toc li {
+    margin: 0.4rem 0;
+}
+
+.toc-sidebar .toc a {
+    color: var(--secondary);
+    transition: all 0.2s;
+    text-decoration: none;
+    display: block;
+    padding: 0.3rem 0;
+    border-left: 3px solid transparent;
+    padding-left: 0.8rem;
+}
+
+.toc-sidebar .toc a:hover {
+    color: var(--primary);
+    border-left-color: var(--tertiary);
+    background: var(--code-bg);
+    padding-left: 1rem;
+}
+
+.toc-sidebar .toc a.active {
+    color: var(--primary);
+    font-weight: 600;
+    border-left-color: var(--primary);
+    padding-left: 1rem;
+}
+
+/* 右侧最新文章 */
+.recent-posts-sidebar {
+    position: absolute;
+    right: calc((var(--recent-width) + var(--gap)) * -1);
+    width: var(--recent-width);
+    top: 0;
+}
+
+.recent-posts-sticky {
+    position: sticky;
+    top: 80px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    background: var(--entry);
+    border-radius: 8px;
+    padding: 1.2rem;
+}
+
+.recent-posts-sidebar h3 {
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary);
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.recent-posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recent-posts-list li {
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.recent-posts-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.recent-posts-list a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-decoration: none;
+    color: var(--primary);
+    transition: color 0.2s;
+}
+
+.recent-posts-list a:hover {
+    color: var(--tertiary);
+}
+
+.recent-post-title {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.recent-post-date {
+    font-size: 0.75rem;
+    color: var(--secondary);
+}
+
+/* 隐藏标题旁边的锚点符号 */
+.post-content h1 .anchor,
+.post-content h2 .anchor,
+.post-content h3 .anchor,
+.post-content h4 .anchor,
+.post-content h5 .anchor,
+.post-content h6 .anchor {
+    display: none !important;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 1600px) {
+    .recent-posts-sidebar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .toc-sidebar {
+        display: none;
+    }
+}
+
+/* 滚动条样式 */
+.toc-sticky::-webkit-scrollbar,
+.recent-posts-sticky::-webkit-scrollbar {
+    width: 4px;
+}
+
+.toc-sticky::-webkit-scrollbar-thumb,
+.recent-posts-sticky::-webkit-scrollbar-thumb {
+    background: var(--tertiary);
+    border-radius: 2px;
+}
+
+.toc-sticky::-webkit-scrollbar-track,
+.recent-posts-sticky::-webkit-scrollbar-track {
+    background: transparent;
+}
