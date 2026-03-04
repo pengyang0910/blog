@@ -102,7 +102,7 @@ body {
 }
 
 /* ==================== 首页文章列表样式 ==================== */
-/* 文章卡片横向布局 - 仿截图样式 */
+/* 文章卡片纵向布局 - 标题在上、描述在中、日期在下 */
 .post-entry {
     position: relative;
     margin-bottom: 20px;
@@ -112,8 +112,8 @@ body {
     border: 1px solid var(--border);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     display: flex;
-    gap: 24px;
-    align-items: center;
+    flex-direction: column;
+    gap: 12px;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
@@ -124,14 +124,14 @@ body {
 
 .post-entry .entry-cover {
     flex-shrink: 0;
-    width: 220px;
-    margin: 0;
-    order: 2;
+    width: 100%;
+    margin: 0 0 12px 0;
+    order: 0;
 }
 
 .post-entry .entry-cover img {
     width: 100%;
-    height: 130px;
+    height: 180px;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -139,10 +139,9 @@ body {
 
 .post-entry .entry-content-wrapper {
     flex: 1;
-    order: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .post-entry .entry-header h2 {
@@ -224,24 +223,20 @@ body {
         justify-content: center;
     }
 
-    /* 移动端文章卡片垂直布局 */
+    /* 移动端文章卡片保持垂直布局 */
     .post-entry {
         flex-direction: column;
-        gap: 16px;
+        gap: 12px;
         padding: 20px;
     }
 
     .post-entry .entry-cover {
         width: 100%;
-        order: 1;
+        margin-bottom: 8px;
     }
 
     .post-entry .entry-cover img {
-        height: 180px;
-    }
-
-    .post-entry .entry-content-wrapper {
-        order: 2;
+        height: 160px;
     }
 
     .post-entry .entry-header h2 {
