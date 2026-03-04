@@ -5,7 +5,7 @@ slug: "blog-setup-guide"
 weight: 1
 draft: false
 tags: ["Hugo", "博客", "教程", "Docker"]
-categories: ["技术"]
+categories: ["建站"]
 summary: "记录本博客的完整搭建过程，涵盖 Hugo 静态站点生成、PaperMod 主题配置、Docker 构建、Nginx 部署及 HTTPS 配置。"
 ShowToc: true
 TocOpen: false

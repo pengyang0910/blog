@@ -5,7 +5,7 @@ slug: "comments-guide"
 weight: 3
 draft: false
 tags: ["博客", "教程", "Hugo"]
-categories: ["技术"]
+categories: ["建站"]
 summary: "详细介绍如何为 Hugo 博客配置 Giscus、Utterances、Waline 等评论系统"
 ShowToc: true
 comments: true

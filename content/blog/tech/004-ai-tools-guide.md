@@ -5,7 +5,7 @@ slug: "ai-tools-guide"
 weight: 4
 draft: false
 tags: ["AI", "工具", "效率"]
-categories: ["工具"]
+categories: ["技术"]
 summary: "汇总当前主流 AI 对话工具，包含简介与访问地址，帮你快速找到适合自己的 AI 助手。"
 ShowToc: true
 TocOpen: false

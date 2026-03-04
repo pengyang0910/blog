@@ -5,7 +5,7 @@ slug: "theme-guide"
 weight: 2
 draft: false
 tags: ["Hugo", "PaperMod", "博客", "教程"]
-categories: ["技术"]
+categories: ["建站"]
 summary: "在博客搭建完成后，进一步定制 PaperMod 主题的外观与功能，包括首页模式、导航菜单、暗色模式、自定义 CSS 及评论系统等。"
 ShowToc: true
 TocOpen: false

@@ -5,7 +5,7 @@ slug: "office-software-tools"
 weight: 5
 draft: false
 tags: ["工具", "效率", "办公"]
-categories: ["工具"]
+categories: ["技术"]
 summary: "整理一份办公人群常用的电脑软件清单，覆盖文档处理、沟通协作、效率提升等场景，帮助你打造高效的办公环境。"
 ShowToc: true
 TocOpen: false
