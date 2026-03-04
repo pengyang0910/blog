@@ -87,14 +87,18 @@ taxonomies = [
   Content = "分享技术心得 | 记录学习历程 | 探索代码之美"
   AlignSocialIconsTo = "left"
 
-# 社交图标（暂未配置）
-# 如果以后需要添加社交链接，可以取消下面的注释并填入真实地址
-# [[params.socialIcons]]
-#   name = "github"
-#   url = "https://github.com/yourusername"
-# [[params.socialIcons]]
-#   name = "email"
-#   url = "mailto:your.email@example.com"
+# 社交图标
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/pengyang0910"
+
+[[params.socialIcons]]
+  name = "email"
+  url = "mailto:420545806@qq.com"
+
+[[params.socialIcons]]
+  name = "rss"
+  url = "/index.xml"
 
 # 编辑建议链接（点击文章底部的编辑按钮）
 [params.editPost]
