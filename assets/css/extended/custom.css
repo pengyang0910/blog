@@ -174,15 +174,6 @@ body {
     opacity: 0.8;
 }
 
-/* 第一篇文章特殊样式 - 与其他文章保持一致 */
-.first-entry {
-    background: var(--entry);
-}
-
-.first-entry .entry-header h2 {
-    font-size: 1.35rem;
-}
-
 /* 查看更多按钮 */
 .home-view-more {
     display: flex;

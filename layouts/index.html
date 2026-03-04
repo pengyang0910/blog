@@ -43,13 +43,9 @@
 </div>
 
 <!-- 文章列表 -->
-{{- range $index, $page := $paginator.Pages }}
-{{- $class := "post-entry" }}
-{{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0)) }}
-{{- $class = "first-entry" }}
-{{- end }}
+{{- range $page := $paginator.Pages }}
 
-<article class="{{ $class }}">
+<article class="post-entry">
     {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
     {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
     <div class="entry-content-wrapper">

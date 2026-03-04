@@ -98,7 +98,7 @@ taxonomies = [
 
 # 编辑建议链接（点击文章底部的编辑按钮）
 [params.editPost]
-  URL = "https://github.com/yourusername/blog/tree/main/content"
+  URL = "https://github.com/pengyang0910/blog/tree/main/content"
   Text = "建议修改"
   appendFilePath = true
 
