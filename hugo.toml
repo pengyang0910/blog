@@ -155,7 +155,7 @@ taxonomies = [
 
 [menu]
   [[menu.main]]
-    name = "📝 博客"
+    name = "📝 文章"
     url = "/blog/"
     weight = 10
   [[menu.main]]
@@ -167,8 +167,8 @@ taxonomies = [
     url = "/projects/"
     weight = 30
   [[menu.main]]
-    name = "🌱 花园"
-    url = "/garden/"
+    name = "📦 归档"
+    url = "/archives/"
     weight = 40
   [[menu.main]]
     name = "👤 关于"
