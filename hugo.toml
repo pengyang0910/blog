@@ -109,12 +109,13 @@ taxonomies = [
 # 2. 将下面的参数替换为你的实际值
 # 3. 将 enable 设置为 true
 [params.giscus]
-  enable = false  # 配置完成后改为 true
-  repo = "yourusername/your-repo"
-  repoId = "R_your_repo_id"
-  category = "Comments"
-  categoryId = "DIC_your_category_id"
+  enable = true
+  repo = "pengyang0910/blog"
+  repoId = "R_kgDORdTo5A"
+  category = "General"
+  categoryId = "DIC_kwDORdTo5M4C3p1E"
   mapping = "pathname"
+  strict = "0"
   reactionsEnabled = "1"
   emitMetadata = "0"
   inputPosition = "bottom"
