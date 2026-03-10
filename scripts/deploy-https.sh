@@ -10,6 +10,9 @@ echo "==> 停止并删除旧的 Nginx 容器..."
 docker stop blog-nginx 2>/dev/null || true
 docker rm blog-nginx 2>/dev/null || true
 
+# 确保日志目录存在
+mkdir -p "$PROJECT_ROOT/nginx/logs"
+
 echo "==> 启动支持 HTTPS 的 Nginx 容器..."
 docker run -d \
   --name blog-nginx \
@@ -19,6 +22,7 @@ docker run -d \
   -v "$PROJECT_ROOT/public:/usr/share/nginx/html:ro" \
   -v "$PROJECT_ROOT/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro" \
   -v "$PROJECT_ROOT/nginx/ssl:/etc/nginx/ssl:ro" \
+  -v "$PROJECT_ROOT/nginx/logs:/var/log/nginx" \
   nginx:alpine
 
 echo ""
