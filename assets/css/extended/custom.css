@@ -33,10 +33,10 @@ body {
     font-family: 'LXGWBright', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
-/* 强制为代码块应用自定义字体（覆盖主题默认样式） */
+/* 代码块使用等宽字体，确保特殊字符正确显示 */
 .post-content pre,
 .post-content code {
-    font-family: 'LXGWBright', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Source Code Pro', 'Consolas', 'Monaco', 'Courier New', monospace !important;
 }
 
 /* 文章正文中的链接颜色 */
@@ -246,4 +246,168 @@ body {
     .home-view-more {
         justify-content: center;
     }
+}
+
+/* ==================== 代码块浅色主题 (GitHub Light) ==================== */
+/* 覆盖代码块背景变量 - 浅色主题 */
+:root {
+    --code-block-bg: #F7F8FA !important;
+    --code-bg: #F7F8FA !important;
+}
+
+/* 代码块容器样式 - 覆盖 Hugo Chroma 内联样式 */
+.post-content pre,
+.post-content .highlight pre,
+.post-content .chroma,
+.highlight pre.chroma,
+pre.chroma,
+.chroma,
+.highlight pre,
+.highlight pre code {
+    background-color: #F7F8FA !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* 覆盖 chroma-mod.css 的 unset */
+.chroma,
+.highlight pre {
+    background-color: #F7F8FA !important;
+}
+
+/* 覆盖 Hugo Chroma 内联样式 - 文字颜色和背景色 */
+.highlight pre,
+.highlight pre code,
+.highlight pre span,
+.post-content .highlight pre,
+.post-content .highlight pre code,
+.post-content .highlight pre span {
+    color: #333333 !important;
+    background-color: #F7F8FA !important;
+}
+
+/* Chroma 语法高亮 - 自定义浅色配色 */
+.chroma,
+.post-content .chroma,
+.highlight .chroma {
+    color: #333333 !important;
+    background-color: #F7F8FA !important;
+}
+
+/* 关键字 (if/for/let/const) - 蓝色 */
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr,
+.chroma .kt {
+    color: #0066CC !important;
+}
+
+/* 字符串 / 文本 - 绿色 */
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .se,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .s1,
+.chroma .ss {
+    color: #008800 !important;
+}
+
+/* 数字 - 橙色 */
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo {
+    color: #FF6600 !important;
+}
+
+/* 注释 - 灰色 */
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf {
+    color: #888888 !important;
+}
+
+/* 函数名 - 紫色 */
+.chroma .nf,
+.chroma .fm {
+    color: #6644BB !important;
+}
+
+/* 类名 */
+.chroma .nc {
+    color: #6644BB !important;
+}
+
+/* 普通代码文字 - 深灰 */
+.chroma .n,
+.chroma .na,
+.chroma .nb,
+.chroma .bp,
+.chroma .nx,
+.chroma .nt {
+    color: #333333 !important;
+}
+
+/* 操作符 */
+.chroma .o,
+.chroma .ow {
+    color: #333333 !important;
+}
+
+/* 属性 */
+.chroma .py,
+.chroma .nd {
+    color: #333333 !important;
+}
+
+/* 高亮行 */
+.chroma .hl {
+    background-color: #e8e8e8 !important;
+}
+
+/* 行号 */
+.chroma .lnt,
+.chroma .ln {
+    color: #888888 !important;
+}
+
+/* 错误 */
+.chroma .err {
+    color: #FF6600 !important;
+    background-color: transparent !important;
+}
+
+/* 代码块内文字颜色 - 普通代码文字 */
+.chroma .cl {
+    color: #333333 !important;
+}
+
+/* 复制按钮适配浅色背景 */
+.copy-code {
+    color: #57606a !important;
+    background-color: #F7F8FA !important;
+    border: 1px solid #d0d7de !important;
+}
+
+.copy-code:hover {
+    color: #24292f !important;
+    background-color: #eaeef2 !important;
 }

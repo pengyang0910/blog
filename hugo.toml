@@ -1,5 +1,6 @@
 baseURL = "https://pengyang.xyz/"
 languageCode = "zh-cn"
+defaultContentLanguage = "zh"
 title = "参商Parry"
 theme = "PaperMod"
 enableRobotsTXT = true
