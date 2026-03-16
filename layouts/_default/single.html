@@ -93,7 +93,6 @@
             </ul>
         </div>
     </aside>
-    </div>
 
     <style>
         :root {
@@ -109,7 +108,7 @@
             margin: 0 auto;
         }
 
-        /* 左侧目录 - 绝对定位 */
+        /* 左侧目录 - 绝对定位 + sticky */
         .toc-sidebar {
             position: absolute;
             left: calc((var(--toc-width) + var(--gap)) * -1);
@@ -197,7 +196,7 @@
             display: none !important;
         }
 
-        /* 右侧最新文章 - 绝对定位 */
+        /* 右侧最新文章 - 绝对定位 + sticky */
         .recent-posts-sidebar {
             position: absolute;
             right: calc((var(--recent-width) + var(--gap)) * -1);

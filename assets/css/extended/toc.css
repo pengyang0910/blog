@@ -6,7 +6,14 @@
     --gap: 2rem;
 }
 
-/* 左侧目录 */
+/* 主容器 - 恢复正常文档流 */
+.post-single {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 左侧目录 - 绝对定位 + sticky */
 .toc-sidebar {
     position: absolute;
     left: calc((var(--toc-width) + var(--gap)) * -1);
@@ -84,7 +91,7 @@
     padding-left: 1rem;
 }
 
-/* 右侧最新文章 */
+/* 右侧最新文章 - 绝对定位 + sticky */
 .recent-posts-sidebar {
     position: absolute;
     right: calc((var(--recent-width) + var(--gap)) * -1);
@@ -163,7 +170,7 @@
     display: none !important;
 }
 
-/* 响应式设计 */
+/* 响应式设计 - 屏幕不够宽时隐藏侧边栏 */
 @media screen and (max-width: 1600px) {
     .recent-posts-sidebar {
         display: none;
@@ -173,6 +180,10 @@
 @media screen and (max-width: 1400px) {
     .toc-sidebar {
         display: none;
+    }
+
+    .post-single {
+        max-width: 100%;
     }
 }
 
